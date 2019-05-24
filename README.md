@@ -1,4 +1,4 @@
-# Es6 Express Knex Boilerplate Api
+# ES6 Express Knex Boilerplate Api
 
 Simple es6 express boilderplate knex setup .
 
