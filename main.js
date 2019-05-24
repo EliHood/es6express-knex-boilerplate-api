@@ -5,6 +5,7 @@ import logger from 'morgan';
 import path from 'path';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import userRoute from './routes/users';
 
 const app = express();
 
@@ -12,13 +13,15 @@ app.use(cors());
 app.use(logger('dev'));
 // For React Stuff if need be
 // app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
+
+app.use('/users', userRoute);
 
 app.use(() => (req, res, next)  =>{
   res.locals.user = req.user; // This is the important line
