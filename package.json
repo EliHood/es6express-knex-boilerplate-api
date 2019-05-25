@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha --watch --require @babel/register",
     "start": "nodemon --exec babel-node main.js"
   },
   "author": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "bookshelf": "^0.14.2",
+    "chai-http": "^4.3.0",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -22,10 +23,15 @@
     "pg": "^7.11.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
     "nodemon": "^1.19.0",
-    "reify": "^0.19.1"
+    "reify": "^0.19.1",
+    "request": "^2.88.0"
   }
 }
