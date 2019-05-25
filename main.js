@@ -7,6 +7,8 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import userRoute from './routes/users';
 
+
+
 const app = express();
 
 app.use(cors());
@@ -36,8 +38,13 @@ app.use(bodyParser.urlencoded({ extended:false}));
 //   res.sendFile(path.join(__dirname+'/client/public/index.html'));
 // })
 
-app.listen(process.env.PORT, () =>
-  console.log(`Example app listening on port ${process.env.PORT}!`),
-);
+
+// module.parent prevents the 
+// Node / Express: EADDRINUSE, Address already in use error when unit testing
+if(!module.parent){
+  app.listen(process.env.PORT, () =>
+    console.log(`Example app listening on port ${process.env.PORT}!`),
+  );
+ }
 
 export default app;
