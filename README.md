@@ -14,5 +14,6 @@ Simple es6 express boilderplate knex/bookshelf setup .
 
 `docker-compose up --build --force-recreate`
 
-
 Then build out the rest of your api. :)
+
+P.S start.sh doesn't point to anything yet.
