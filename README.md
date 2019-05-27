@@ -10,4 +10,8 @@ Simple es6 express boilderplate knex/bookshelf setup .
 * `alias knex='node -r reify ./node_modules/.bin/knex'`
 * `npm start`
 
+#### For Docker
+
+
+
 Then build out the rest of your api. :)

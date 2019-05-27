@@ -6,11 +6,14 @@ module.exports ={
   development: {
     client: 'pg',
     connection: {
-      host : process.env.HOST,
-      user : process.env.DBUSER,
-      password : process.env.DBPASS,
-      database : process.env.DBNAME,
-      charset: 'utf8'
+      host : process.env.NODE_ENV === 'production' ? 'db' : process.env.HOST || 'localhost',
+      user : process.env.DBUSER || 'postgres',
+      password : process.env.DBPASS  || 'postgres',
+      database : process.env.DBNAME  || 'postgres',
+      charset: 'utf8',
+      port: 5432
+      
+      
     }
   },
 
@@ -35,7 +38,8 @@ module.exports ={
     connection: {
       database: 'my_db',
       user:     'username',
-      password: 'password'
+      password: 'password',
+
     },
     pool: {
       min: 2,
