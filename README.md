@@ -9,6 +9,10 @@ Simple es6 express boilderplate knex/bookshelf setup .
 * `npm install`
 * `alias knex='node -r reify ./node_modules/.bin/knex'`
 * `npm start`
+* `npm run migrate`
+* `npm run seed`
+
+
 
 #### For Docker
 
